@@ -10,4 +10,5 @@ sum(case when payment_method = '{{payment_method}}' then amount end) as {{paymen
 {%- if not loop.last %},{% endif -%}
 {% endfor %}
 from {{ ref('raw_payments') }}
+
 group by 1
